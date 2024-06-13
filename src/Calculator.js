@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 
 const Calculator = () => {
     
@@ -161,42 +159,45 @@ const Calculator = () => {
 
   return (
     <>
-        <div>Calculator</div>
-        <div className="calculator">
-        <Row>
-            <Col><input type="text" className="display" disabled={true} value={displayValue}/></Col>
-        </Row>
-        <Row>
-            <Col><button className="btn-circle default" onClick={handleClear}>AC</button></Col>
-            <Col><button className="btn-circle default" onClick={handleSign}>±</button></Col>
-            <Col><button className="btn-circle default" onClick={handlePercent}>%</button></Col>
-            <Col><button className="btn-circle operator" onClick={e => handleOperator(e)}>÷</button></Col>
-        </Row>
-        <Row>
-            <Col><button className="btn-circle number" onClick={(e) => handleNum(e)}>7</button></Col>
-            <Col><button className="btn-circle number" onClick={(e) => handleNum(e)}>8</button></Col>
-            <Col><button className="btn-circle number" onClick={(e) => handleNum(e)}>9</button></Col>
-            <Col><button className="btn-circle operator" onClick={e => handleOperator(e)} value="*">×</button></Col>
-        </Row>
-        <Row>
-            <Col><button className="btn-circle number" onClick={(e) => handleNum(e)}>4</button></Col>
-            <Col><button className="btn-circle number" onClick={(e) => handleNum(e)}>5</button></Col>
-            <Col><button className="btn-circle number" onClick={(e) => handleNum(e)}>6</button></Col>
-            <Col><button className="btn-circle operator" onClick={e => handleOperator(e)}>-</button></Col>
-        </Row>
-        <Row>
-            <Col><button className="btn-circle number" onClick={(e) => handleNum(e)}>1</button></Col>
-            <Col><button className="btn-circle number" onClick={(e) => handleNum(e)}>2</button></Col>
-            <Col><button className="btn-circle number" onClick={(e) => handleNum(e)}>3</button></Col>
-            <Col><button className="btn-circle operator" onClick={e => handleOperator(e)}>+</button></Col>
-        </Row>
-        <Row>
-            <Col xs={6}><button className="btn-circle btn-zero number" onClick={(e) => handleNum(e)}>0</button></Col>
-            <Col><button className="btn-circle number" onClick={handlePoint}>.</button></Col>
-            <Col><button className="btn-circle operator" onClick={handleEqual}>=</button></Col>
-        </Row>
+        <div className='flex flex-col h-full text-center items-center'>
+            <div>Calculator</div>
+            <div className="mt-5 bg-black rounded-3xl p-6 sm:p-10 max-w-[350px] sm:max-w-xl">
+                <div>
+                    <div><input type="text" className="bg-black text-white border-0 w-full text-[50px] sm:text-[90px] text-right mb-4 rounded-lg" disabled={true} value={displayValue}/></div>
+                </div>
+                <div className='grid grid-rows-5'>  
+                    <div className='grid grid-cols-4 gap-3 sm:gap-4 text-[30px] sm:text-[50px] text-bold text-center sm:my-2'>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full text-black bg-slate-300 hover:bg-slate-200" onClick={handleClear}>AC</button></div>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full text-black bg-slate-300 hover:bg-slate-200" onClick={handleSign}>±</button></div>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full text-black bg-slate-300 hover:bg-slate-200" onClick={handlePercent}>%</button></div>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full text-white bg-amber-500 hover:bg-amber-400" onClick={e => handleOperator(e)}>÷</button></div>
+                    </div>
+                    <div className='grid grid-cols-4 gap-3 sm:gap-4 text-[30px] sm:text-[50px] text-bold text-center sm:my-2'>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full bg-neutral-800 text-white hover:bg-neutral-600" onClick={(e) => handleNum(e)}>7</button></div>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full bg-neutral-800 text-white hover:bg-neutral-600" onClick={(e) => handleNum(e)}>8</button></div>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full bg-neutral-800 text-white hover:bg-neutral-600" onClick={(e) => handleNum(e)}>9</button></div>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full text-white bg-amber-500 hover:bg-amber-400" onClick={e => handleOperator(e)} value="*">×</button></div>
+                    </div>
+                    <div className='grid grid-cols-4 gap-3 sm:gap-4 text-[30px] sm:text-[50px] text-bold text-center sm:my-2'>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full bg-neutral-800 text-white hover:bg-neutral-600" onClick={(e) => handleNum(e)}>4</button></div>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full bg-neutral-800 text-white hover:bg-neutral-600" onClick={(e) => handleNum(e)}>5</button></div>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full bg-neutral-800 text-white hover:bg-neutral-600" onClick={(e) => handleNum(e)}>6</button></div>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full text-white bg-amber-500 hover:bg-amber-400" onClick={e => handleOperator(e)}>-</button></div>
+                    </div>
+                    <div className='grid grid-cols-4 gap-3 sm:gap-4 text-[30px] sm:text-[50px] text-bold text-center sm:my-2'>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full bg-neutral-800 text-white hover:bg-neutral-600" onClick={(e) => handleNum(e)}>1</button></div>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full bg-neutral-800 text-white hover:bg-neutral-600" onClick={(e) => handleNum(e)}>2</button></div>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full bg-neutral-800 text-white hover:bg-neutral-600" onClick={(e) => handleNum(e)}>3</button></div>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full text-white bg-amber-500 hover:bg-amber-400" onClick={e => handleOperator(e)}>+</button></div>
+                    </div>
+                    <div className='grid grid-cols-4 gap-3 sm:gap-4 text-[30px] sm:text-[50px] text-bold text-center sm:my-2'>
+                        <div className='col-span-2 w-full' xs={6}><button className="cursor-pointer w-full py-3.5 px-9 rounded-full text-left btn-zero bg-neutral-800 text-white hover:bg-neutral-600" onClick={(e) => handleNum(e)}>0</button></div>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full bg-neutral-800 text-white hover:bg-neutral-600" onClick={handlePoint}>.</button></div>
+                        <div><button className="cursor-pointer w-full py-2 sm:py-3.5 sm:px-4 rounded-full text-white bg-amber-500 hover:bg-amber-400" onClick={handleEqual}>=</button></div>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </>
   )
 }
