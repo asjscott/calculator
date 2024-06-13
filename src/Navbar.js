@@ -89,7 +89,7 @@ const Navbar = () => {
                 <a
                 href="https://www.linkedin.com/in/alec-scott-499670280/"
                 type="button"
-                className="mobile-only:text-neutral-500 me-4 text-white transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                className="mobile-only:text-neutral-500 me-4 text-black transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                data-twe-ripple-init>
                 <span className="mx-auto [&>svg]:h-5 [&>svg]:w-5">
                     <svg
@@ -105,7 +105,7 @@ const Navbar = () => {
                 <a
                 href="https://www.github.com/asjscott"
                 type="button"
-                className="mobile-only:text-neutral-500 me-4 text-white transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                className="mobile-only:text-neutral-500 me-4 text-black transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                 data-twe-ripple-init>
                 <span className="mx-auto [&>svg]:h-5 [&>svg]:w-5">
                     <svg
