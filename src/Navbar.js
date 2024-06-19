@@ -65,7 +65,7 @@ const Navbar = () => {
 
                 <a
                     className="flex items-center text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
-                    href="#"
+                    href="https://asjscott.github.io/#projects"
                     type="button"
                     id="dropdownMenuButton2"
                     data-twe-dropdown-toggle-ref
@@ -95,9 +95,9 @@ const Navbar = () => {
                         >View projects section</a>
                     </li>
                     <li>
-                    <a
+                    <span
                     className="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal pointer-events-none text-black/30 dark:bg-surface-dark dark:text-white/30"
-                    >Football score predictor</a>
+                    >Football score predictor</span>
                 </li>
                     <li>
                     <a
@@ -107,10 +107,9 @@ const Navbar = () => {
                         >React projects</a>
                     </li>
                     <li>
-                    <a
+                    <span
                         className="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal pointer-events-none text-black/30 dark:bg-surface-dark dark:text-white/30"
-                        >Trading Bot</a
-                    >
+                        >Trading Bot</span>
                     </li>
                 </ul>
                 </li>
