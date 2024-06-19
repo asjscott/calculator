@@ -51,17 +51,7 @@ const Calculator = () => {
                 operand2: "",
                 operator: operator
             })
-            if ((result >= 1000000000 || result <= -1000000000) || (result < 0.00001 && result > -0.00001)) {
-                setDisplayValue(result.toExponential(5))
-            } else if (String(result).length > 9 && (result < 0.0001 || result > -0.0001)) {
-                setDisplayValue(result.toPrecision(7))
-            } else if (String(result).length > 9 && (result < 0.001 || result > -0.001)) {
-                setDisplayValue(result.toPrecision(8))
-            } else if (String(result).length > 9) {
-                setDisplayValue(result.toPrecision(9))
-            } else {
-                setDisplayValue(result)
-            }  
+            handleDisplay(result)
             return;    
             }   
         
@@ -92,17 +82,7 @@ const Calculator = () => {
             operand2: "",
             equalPressed: true,
         })
-        if ((result >= 1000000000 || result <= -1000000000) || (result < 0.00001 && result > -0.00001)) {
-            setDisplayValue(result.toExponential(5))
-            } else if (String(result).length > 9 && (result < 0.0001 || result > -0.0001)) {
-            setDisplayValue(result.toPrecision(7))
-            } else if (String(result).length > 9 && (result < 0.001 || result > -0.001)) {
-                setDisplayValue(result.toPrecision(8))
-            } else if (String(result).length > 9) {
-                setDisplayValue(result.toPrecision(9))
-            } else {
-                setDisplayValue(result)
-            } 
+        handleDisplay(result)
     }
 
     function handlePoint() {
@@ -146,14 +126,17 @@ const Calculator = () => {
                 ...calculationState,
                 operand1: calculationState.operand1 / 100
             })
-            setDisplayValue(calculationState.operand1/100)
+            const result1 = calculationState.operand1 / 100
+            handleDisplay(result1)
             return
         }
         setCalculationState({
             ...calculationState,
             operand2: calculationState.operand2/100
         })
-        setDisplayValue(calculationState.operand2/100)
+        const result2 = calculationState.operand2/100
+        handleDisplay(result2)
+        console.log(result2)
         }
 
     function handleClear() {
@@ -177,6 +160,20 @@ const Calculator = () => {
             default:
                 return num1 / num2;
         }
+    }
+
+    function handleDisplay(num) {
+        if ((num >= 1000000000 || num <= -1000000000) || (num  < 0.00001 && num > -0.00001)) {
+            setDisplayValue(num.toExponential(5))
+            } else if (String(num).length > 9 && (num < 0.0001 || num > -0.0001)) {
+            setDisplayValue(num.toPrecision(7))
+            } else if (String(num).length > 9 && (num < 0.001 || num > -0.001)) {
+                setDisplayValue(num.toPrecision(8))
+            } else if (String(num).length > 9) {
+                setDisplayValue(num.toPrecision(9))
+            } else {
+                setDisplayValue(num)
+            } 
     }
 
   return (
